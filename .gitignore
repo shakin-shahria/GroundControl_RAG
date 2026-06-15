@@ -1,0 +1,30 @@
+# Environment secrets — never commit real credentials
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+dist/
+build/
+*.log
+
+# macOS
+.DS_Store
+
+# Alembic compiled migrations
+backend/alembic/versions/*.pyc
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# Node (for frontend)
+node_modules/
