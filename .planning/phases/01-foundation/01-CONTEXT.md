@@ -15,7 +15,7 @@ Deliver a runnable development environment: `docker-compose up` brings FastAPI, 
 
 ### Project Layout
 - **D-01:** Backend uses a **by-layer** structure: `app/api/` (routes), `app/models/` (SQLAlchemy ORM models + Pydantic schemas collocated), `app/services/` (business logic), `app/core/` (shared infrastructure). This is the template all future phases follow.
-- **D-02:** Shared infrastructure lives in `app/core/`: `config.py` (Pydantic Settings), `database.py` (SQLAlchemy async engine + session factory), `chroma.py` (ChromaDB PersistentClient singleton), `embedding.py` (sentence-transformers model singleton). Downstream phases import clients from `app/core/`.
+- **D-02:** Shared infrastructure lives in `app/core/`: `config.py` (Pydantic Settings), `database.py` (SQLAlchemy async engine + session factory), `chroma.py` (ChromaDB **HttpClient** connecting to the separate `chromadb` Docker service — not PersistentClient), `embedding.py` (sentence-transformers model singleton). Downstream phases import clients from `app/core/`.
 - **D-03:** API routes are versioned under `/api/v1/`. Router files live in `app/api/v1/` (e.g., `app/api/v1/auth.py`, `app/api/v1/health.py`). The main `app/api/router.py` aggregates all v1 routers and mounts them.
 - **D-04:** Pydantic request/response schemas are **collocated** with their SQLAlchemy model in `app/models/`. Example: `app/models/user.py` contains both the `User` table class and `UserCreate` / `UserResponse` schemas. One file per domain entity.
 
