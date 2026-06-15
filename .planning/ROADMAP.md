@@ -29,7 +29,13 @@
   3. A registered user can log in and receive a JWT access token; a protected route returns 401 without a valid token and 200 with one
   4. Every service exposes `GET /health` and Docker Compose `depends_on: service_healthy` prevents dependent services from starting until their upstream is ready
   5. PostgreSQL schema has all five tables (users, documents, document_chunks, ai_requests, evaluations) created via Alembic migration on first boot
-**Plans**: TBD
+**Plans**: 5 plans
+Plans:
+- [ ] 01-01-PLAN.md — Project scaffold: Docker Compose, Dockerfile, requirements.txt, directory skeleton, alembic.ini
+- [ ] 01-02-PLAN.md — Core modules: config.py, database.py, chroma.py, embedding.py, security.py, main.py skeleton
+- [ ] 01-03-PLAN.md — ORM models (all 5 tables) + Alembic async env.py + initial migration
+- [ ] 01-04-PLAN.md — Auth routes (register/login), deps.py, user_service.py, router wiring, main.py finalized
+- [ ] 01-05-PLAN.md — Integration test suite: conftest.py, test_auth.py, test_health.py, test_db.py, pyproject.toml
 
 ### Phase 2: Document Ingestion Pipeline
 **Goal**: An admin can upload a PDF, DOCX, or TXT file and verify that its content is chunked, embedded, and retrievable in ChromaDB — the knowledge base has content before the query pipeline is built
@@ -84,7 +90,7 @@
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/? | Not started | - |
+| 1. Foundation | 0/5 | Planned | - |
 | 2. Document Ingestion Pipeline | 0/? | Not started | - |
 | 3. Query Pipeline | 0/? | Not started | - |
 | 4. Telemetry and Evaluation | 0/? | Not started | - |
@@ -121,4 +127,4 @@
 
 ---
 *Roadmap created: 2026-06-14*
-*Last updated: 2026-06-14 after initial creation*
+*Last updated: 2026-06-15 — Phase 1 planned: 5 plans across 5 waves*
