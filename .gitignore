@@ -1,0 +1,56 @@
+# OS
+.DS_Store
+.DS_Store?
+._*
+
+# Claude Code internals
+.claude/
+
+# Editor history
+.history/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.venv/
+venv/
+env/
+.env
+
+# Node
+node_modules/
+.npm
+.pnp
+
+# Build outputs
+frontend/dist/
+frontend/build/
+
+# Secrets / environment
+.env.local
+.env.*.local
+*.env
+
+# ChromaDB data
+chroma_data/
+chroma/
+
+# Logs
+*.log
+logs/
+
+# Test coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# Docker volumes (local)
+postgres_data/
