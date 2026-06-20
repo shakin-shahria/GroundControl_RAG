@@ -20,10 +20,19 @@ __pycache__/
 dist/
 build/
 .eggs/
+.mypy_cache/
+.pytest_cache/
+
+# Virtual environments
 .venv/
 venv/
 env/
+
+# Secrets / environment
 .env
+.env.local
+.env.*.local
+*.env
 
 # Node
 node_modules/
@@ -33,11 +42,6 @@ node_modules/
 # Build outputs
 frontend/dist/
 frontend/build/
-
-# Secrets / environment
-.env.local
-.env.*.local
-*.env
 
 # ChromaDB data
 chroma_data/
@@ -50,7 +54,13 @@ logs/
 # Test coverage
 .coverage
 htmlcov/
-.pytest_cache/
+
+# Alembic compiled migrations
+backend/alembic/versions/*.pyc
+
+# IDE
+.vscode/
+.idea/
 
 # Docker volumes (local)
 postgres_data/
